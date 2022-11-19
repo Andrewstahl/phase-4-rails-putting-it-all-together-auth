@@ -22,6 +22,7 @@ function LoginForm({ onLogin }) {
         r.json().then((user) => onLogin(user));
       } else {
         r.json().then((err) => setErrors(err.errors));
+        // r.json().then((err) => setErrors(Object.entries(err.errors).flat().slice(1, 2)));
       }
     });
   }
