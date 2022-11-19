@@ -37,10 +37,13 @@ function NewRecipe({ user }) {
       }),
     }).then((r) => {
       setIsLoading(false);
+      console.log(r)
       if (r.ok) {
         history.push("/");
       } else {
         r.json().then((err) => setErrors(err.errors));
+        // r.json().then((err) => console.log(Object.entries(err.errors).flat().slice(1, 2)));
+        // r.json().then((err) => setErrors(Object.entries(err.errors).flat().slice(1, 2)));
       }
     });
   }
